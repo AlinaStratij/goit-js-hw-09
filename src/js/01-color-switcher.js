@@ -1,15 +1,32 @@
 
 
 const refs = {
+  body:document.querySelector(`body`),
   buttonStart: document.querySelector(`button[data-start]`),
   buttonStop: document.querySelector(`button[data-stop]`),
 };
-console.log(refs.buttonStart);
-console.log(refs.buttonStop);
 
 refs.buttonStart.addEventListener(`click`,onStartClick)
 refs.buttonStop.addEventListener(`click`,onStopClick)
+let timeoutId = null;
+const CLICK_DELAY = 1000;
+function getRandomHexColor() {
+    return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+};
 
-function onStartClick(evt){
-  console.log(`hello`)
+function onChangeBgcolor() {
+ timeoutId = setInterval(() => {
+   refs.body.style.backgroundColor = getRandomHexColor();
+ }, CLICK_DELAY);
 }
+
+function onStartClick(evt) {
+  onChangeBgcolor();
+  console.log(`change color`)
+}
+
+function onStopClick(evt) {
+  console.log(`stop changes`)
+  clearInterval(timeoutId);
+}
+
