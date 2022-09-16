@@ -23,14 +23,14 @@ function onChangeBgcolor() {
 function onStartClick(evt) {
   onChangeBgcolor();
   console.log(`change color`)
-  refs.buttonStart.disabled = true;
-  refs.buttonStop.disabled = false;
+  refs.buttonStart.disabled =true;
+  refs.buttonStop.disabled =false;
 }
 
 function onStopClick(evt) {
   console.log(`stop changes`)
   clearInterval(timeoutId);
-  refs.buttonStop.disabled = true;
-  refs.buttonStart.disabled = false;
+  refs.buttonStop.disabled =true;
+  refs.buttonStart.disabled =false;
 }
 

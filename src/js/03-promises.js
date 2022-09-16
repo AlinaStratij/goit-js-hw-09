@@ -2,19 +2,9 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 const refs = {
   form: document.querySelector('.form'),
-  // delay: document.querySelector('input[name="delay"]'),
-  // step: document.querySelector('input[name="step"]'),
-  // amount: document.querySelector('input[name="amount"]'),
-  // submit: document.querySelector('button[type="submit"]'),
 };
 
 refs.form.addEventListener('submit', onSubmitForm);
-
-// Напиши скрипт, який на момент сабміту форми викликає функцію createPromise(position, delay)
-// стільки разів, скільки ввели в поле amount.Під час кожного виклику передай їй номер
-// промісу(position), що створюється, і затримку, враховуючи першу затримку(delay), введену
-// користувачем, і крок(step).
-
 function onSubmitForm(e) {
   e.preventDefault();
 
